@@ -11,7 +11,11 @@ SECRET_KEY = 'z$wa9_c1f+cx20giud*sjuis0$m*&#rpn@&&=f56t0cd3gcemj'  # Replace wit
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    ".vercel.app",  # Allow all Vercel subdomains
+    "127.0.0.1",  # Local testing
+    os.getenv("VERCEL_URL", ""),  # Use the dynamic domain from Vercel
+]
 
 # Application definition
 INSTALLED_APPS = [
